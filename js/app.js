@@ -19,6 +19,10 @@ createApp({
       ],
     };
   },
-  methods: {},
+  methods: {
+    deleteTodo(index) {
+      this.todos.splice(index, 1);
+    },
+  },
   mounted() {},
 }).mount('#app');

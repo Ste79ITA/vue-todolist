@@ -50,8 +50,16 @@ li {
   border-bottom: 1px solid darkgray;
   margin-bottom: 10px;
   padding: 4px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .done {
   text-decoration: line-through;
+}
+
+.delete {
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
 }

@@ -16,11 +16,11 @@
             <button>Aggiungi</button>
           </div>
           <ul class="list">
-            <li
-              :class="todo.done ? 'done' : '' "
-              v-for="(todo, index) in todos"
-            >
-              {{ todo.text }}
+            <li v-for="(todo, index) in todos">
+              <span class="item" :class="todo.done ? 'done' : '' "
+                >{{ todo.text }}</span
+              >
+              <span class="delete" @click="deleteTodo(index)">X</span>
             </li>
           </ul>
         </div>
