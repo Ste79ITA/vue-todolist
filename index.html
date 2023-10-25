@@ -12,7 +12,7 @@
         <div class="container">
           <h1 class="title">BOOLEAN</h1>
           <div class="input">
-            <input v-model="userInput" type="text" />
+            <input v-model="userInput" type="text" @keyup.enter="addTodo()" />
             <button @click="addTodo()">Aggiungi</button>
           </div>
           <ul class="list">
