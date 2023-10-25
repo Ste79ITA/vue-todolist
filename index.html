@@ -16,7 +16,12 @@
             <button>Aggiungi</button>
           </div>
           <ul class="list">
-            <li v-for="(todo, index) in todos">{{ todo.text }}</li>
+            <li
+              :class="todo.done ? 'done' : '' "
+              v-for="(todo, index) in todos"
+            >
+              {{ todo.text }}
+            </li>
           </ul>
         </div>
       </section>
