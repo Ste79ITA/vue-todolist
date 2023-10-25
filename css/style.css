@@ -64,3 +64,13 @@ li {
   font-size: 13px;
   cursor: pointer;
 }
+
+.error {
+  color: red;
+  margin-top: -30px;
+  margin-bottom: 30px;
+}
+
+.hidden {
+  visibility: hidden;
+}

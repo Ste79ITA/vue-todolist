@@ -15,6 +15,9 @@
             <input v-model="userInput" type="text" @keyup.enter="addTodo()" />
             <button @click="addTodo()">Aggiungi</button>
           </div>
+          <div class="error" :class="error ? '' : 'hidden'">
+            Inserire una parola di almeno 5 caratteri!
+          </div>
           <ul class="list">
             <li v-for="(todo, index) in todos" @click="toggleDone(todo)">
               <span class="item" :class="todo.done ? 'done' : '' "
@@ -22,6 +25,7 @@
               >
               <span class="delete" @click="deleteTodo(index)">X</span>
             </li>
+            <li v-if="todos.length < 1">La lista è vuota!</li>
           </ul>
         </div>
       </section>
