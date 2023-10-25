@@ -3,6 +3,7 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
+      userInput: '',
       todos: [
         {
           text: 'Fare i compiti',
@@ -22,6 +23,10 @@ createApp({
   methods: {
     deleteTodo(index) {
       this.todos.splice(index, 1);
+    },
+    addTodo() {
+      this.todos.unshift({ text: this.userInput, done: false });
+      this.userInput = '';
     },
   },
   mounted() {},

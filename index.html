@@ -12,8 +12,8 @@
         <div class="container">
           <h1 class="title">BOOLEAN</h1>
           <div class="input">
-            <input type="text" />
-            <button>Aggiungi</button>
+            <input v-model="userInput" type="text" />
+            <button @click="addTodo()">Aggiungi</button>
           </div>
           <ul class="list">
             <li v-for="(todo, index) in todos">
