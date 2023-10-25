@@ -28,6 +28,13 @@ createApp({
       this.todos.unshift({ text: this.userInput, done: false });
       this.userInput = '';
     },
+    toggleDone(todo) {
+      if (todo.done === true) {
+        todo.done = false;
+      } else {
+        todo.done = true;
+      }
+    },
   },
   mounted() {},
 }).mount('#app');

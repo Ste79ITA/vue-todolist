@@ -16,7 +16,7 @@
             <button @click="addTodo()">Aggiungi</button>
           </div>
           <ul class="list">
-            <li v-for="(todo, index) in todos">
+            <li v-for="(todo, index) in todos" @click="toggleDone(todo)">
               <span class="item" :class="todo.done ? 'done' : '' "
                 >{{ todo.text }}</span
               >
