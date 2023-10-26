@@ -19,7 +19,11 @@
             Inserire una parola di almeno 5 caratteri!
           </div>
           <ul class="list">
-            <li v-for="(todo, index) in todos" @click="toggleDone(todo)">
+            <li
+              v-for="(todo, index) in todos"
+              :key="index"
+              @click="toggleDone(todo)"
+            >
               <span :class="{'done': todo.done}">{{ todo.text }}</span>
               <span class="delete" @click="deleteTodo(index)">X</span>
             </li>
