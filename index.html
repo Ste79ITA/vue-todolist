@@ -15,14 +15,12 @@
             <input v-model="userInput" type="text" @keyup.enter="addTodo()" />
             <button @click="addTodo()">Aggiungi</button>
           </div>
-          <div class="error" :class="error ? '' : 'hidden'">
+          <div class="error" :class="{'hidden': !inputError}">
             Inserire una parola di almeno 5 caratteri!
           </div>
           <ul class="list">
             <li v-for="(todo, index) in todos" @click="toggleDone(todo)">
-              <span class="item" :class="todo.done ? 'done' : '' "
-                >{{ todo.text }}</span
-              >
+              <span :class="{'done': todo.done}">{{ todo.text }}</span>
               <span class="delete" @click="deleteTodo(index)">X</span>
             </li>
             <li v-if="todos.length < 1">La lista è vuota!</li>

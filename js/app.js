@@ -3,7 +3,7 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
-      error: false,
+      inputError: false,
       userInput: '',
       todos: [
         {
@@ -27,11 +27,11 @@ createApp({
     },
     addTodo() {
       if (this.userInput.length < 5) {
-        return (this.error = true);
+        return (this.inputError = true);
       } else {
         this.todos.unshift({ text: this.userInput, done: false });
         this.userInput = '';
-        this.error = false;
+        this.inputError = false;
       }
     },
     toggleDone(todo) {
@@ -42,5 +42,7 @@ createApp({
       }
     },
   },
-  mounted() {},
+  mounted() {
+    console.log(this.inputError);
+  },
 }).mount('#app');
