@@ -26,7 +26,7 @@ createApp({
       this.todos.splice(index, 1);
     },
     addTodo() {
-      if (this.userInput.length < 5) {
+      if (this.userInput.length < 5 && this.userInput != ' ') {
         return (this.inputError = true);
       } else {
         this.todos.unshift({ text: this.userInput, done: false });
@@ -35,14 +35,13 @@ createApp({
       }
     },
     toggleDone(todo) {
-      if (todo.done === true) {
-        todo.done = false;
-      } else {
-        todo.done = true;
-      }
+      // if (todo.done === true) {
+      //   todo.done = false;
+      // } else {
+      //   todo.done = true;
+      // }
+      todo.done = !todo.done;
     },
   },
-  mounted() {
-    console.log(this.inputError);
-  },
+  mounted() {},
 }).mount('#app');
